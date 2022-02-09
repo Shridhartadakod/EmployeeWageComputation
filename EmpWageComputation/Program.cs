@@ -13,6 +13,8 @@ namespace EmpWageComputation
             Console.WriteLine("Welcome Emplyee Wage Computation");
             EmpWageComputations emp = new EmpWageComputations();
             emp.ISEmployeePresent();
+            emp.CalculateEmpDaliyWage();
+            emp.SwitchStatement();
             Console.ReadKey();
         }
     }

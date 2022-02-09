@@ -28,6 +28,8 @@ namespace EmpWageComputation
                  Console.WriteLine("Employee is absent");
             
         }
+
+        //Calculate Daliy wage
         public void CalculateEmpDaliyWage()
         {
 
@@ -52,6 +54,54 @@ namespace EmpWageComputation
           
 
          }
+
+        //Parttime and Wages
+        public void PartTime()
+        {
+            int EmpHrs = 0;
+            int EmpWage = 0;
+            int check=r.Next(0, 3);
+            if (check == IS_FULL_TIME)
+            {
+
+                EmpHrs = 8;
+            }
+            else if (check == IS_PART_TIME)
+            {
+
+                EmpHrs = 4;
+
+            }
+            else 
+            {
+                EmpHrs = 0;
+            }
+            EmpWage = EmpHrs * Emp_Rate_Per_Hour;
+            Console.WriteLine("EmployeeWage "+ EmpWage);
+            Console.ReadLine();
+                
+        }
+        public void SwitchStatement()
+        {
+            int EmpHrs = 0;
+            int EmpWage = 0;
+            int check = r.Next(0, 3);
+            switch (check)
+            {
+                case IS_FULL_TIME:
+                    EmpHrs= 8;
+                    break;
+                case IS_PART_TIME:
+                    EmpHrs = 4;
+                    break;
+                    default:
+                    EmpHrs = 0;
+                    break;
+            }
+            EmpWage = EmpHrs * Emp_Rate_Per_Hour;
+            Console.WriteLine("EmployeeWage"+EmpWage);
+            Console.ReadLine();
+        }
 
     }
 }
