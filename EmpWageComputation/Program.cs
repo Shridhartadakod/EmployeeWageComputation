@@ -11,6 +11,8 @@ namespace EmpWageComputation
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome Emplyee Wage Computation");
+            EmpWageComputations emp = new EmpWageComputations();
+            emp.ISEmployeePresent();
             Console.ReadKey();
         }
     }
