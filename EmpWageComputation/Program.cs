@@ -15,6 +15,8 @@ namespace EmpWageComputation
             emp.ISEmployeePresent();
             emp.CalculateEmpDaliyWage();
             emp.SwitchStatement();
+            emp.MonthlyWage();
+            emp.TotalWorkingHrs();
             Console.ReadKey();
         }
     }

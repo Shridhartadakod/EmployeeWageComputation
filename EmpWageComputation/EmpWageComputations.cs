@@ -81,6 +81,8 @@ namespace EmpWageComputation
             Console.ReadLine();
                 
         }
+
+        //using switch case statement
         public void SwitchStatement()
         {
             int EmpHrs = 0;
@@ -102,6 +104,72 @@ namespace EmpWageComputation
             Console.WriteLine("EmployeeWage"+EmpWage);
             Console.ReadLine();
         }
+        /// <summary>
+        /// Montly wage
+        /// </summary>
 
+        public void MonthlyWage()
+        {
+            int EmpHrs=0;
+            int EmpWage=0;
+            int totalWage = 0;
+
+            for( int day = 0; day < NUM_OF_WORKING_DAYS; day++)
+            {
+                int check = r.Next(0, 3);
+                switch (check)
+                {
+                    case IS_FULL_TIME:
+                        EmpHrs = 8;
+                        break;
+                    case IS_PART_TIME:
+                        EmpHrs = 4;
+                        break;
+                    default:
+                        EmpHrs = 0;
+                        break;
+                }
+                EmpWage = EmpHrs * Emp_Rate_Per_Hour;
+                totalWage+=EmpWage;
+                Console.WriteLine("EmployeeWage" + EmpWage);
+
+            }
+            Console.WriteLine("TotalWage is:" + totalWage);
+
+        }
+
+
+        public void TotalWorkingHrs()
+        {
+            int EmpHrs = 0;
+            int totalempHrs = 0;
+            int totalWorkingdays = 0;
+
+            while(totalempHrs<=MAX_HRS_IN_MONTH && totalWorkingdays< NUM_OF_WORKING_DAYS)
+            {
+                totalWorkingdays++;
+
+
+                int check = r.Next(0, 3);
+                switch (check)
+                {
+                    case IS_FULL_TIME:
+                        EmpHrs = 8;
+                        break;
+                    case IS_PART_TIME:
+                        EmpHrs = 4;
+                        break;
+                    default:
+                        EmpHrs = 0;
+                        break;
+                }
+            
+                totalempHrs+=EmpHrs;
+                Console.WriteLine("Days is:" + totalWorkingdays + "Employee Hrs :" +EmpHrs);
+            }
+            int totalWage = totalempHrs * Emp_Rate_Per_Hour;
+            Console.WriteLine("Total Employee Wage =" + totalWage);
+            Console.ReadLine();
+        }
     }
 }
